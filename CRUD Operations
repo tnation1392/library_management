@@ -1,0 +1,22 @@
+-- Add a new book to the books table
+INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
+VALUES('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
+SELECT * FROM books;
+
+-- Update an existing member's address
+UPDATE members
+set member_address = '125 Oak St'
+where member_id = 'C103';
+-- Double check it worked
+Select member_address
+FROM members
+WHERE member_id = 'C103';
+
+-- Delete a record from the issued_status table
+DELETE FROM issued_status
+WHERE issued_id = 'IS121';
+
+-- List members who have more than one book out
+SELECT issued_emp_id, COUNT(*) FROM issued_status
+GROUP BY 1
+HAVING COUNT(*) > 1;
