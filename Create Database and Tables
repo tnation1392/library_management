@@ -78,3 +78,16 @@ CREATE TABLE return_status
             return_book_isbn VARCHAR(50),
             FOREIGN KEY (return_book_isbn) REFERENCES books(isbn)
 );
+
+-- review tables to ensure that data imported
+SELECT * from branch;
+
+SELECT * FROM employees;
+
+SELECT * FROM members;
+
+SELECT * FROM books;
+
+SELECT * FROM issued_status;
+
+SELECT * FROM return_status;
